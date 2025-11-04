@@ -1,4 +1,4 @@
-namespace storefront.Models
+namespace Storefront.Models
 {
     public class Product
     {

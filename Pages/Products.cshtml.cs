@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using storefront.Models;
+using Storefront.Models;
 
 public class ProductsModel : PageModel
 {
