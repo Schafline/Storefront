@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using storefront.Models;
+using Storefront.Models;
 
 public class ProductDetailModel : PageModel
 {
@@ -29,24 +29,24 @@ public class ProductDetailModel : PageModel
         }
 
     }
-public IActionResult OnPost()
-{
-    var product = GetProducts().FirstOrDefault(p => p.Id == Id);
-    if (product == null)
+    public IActionResult OnPost()
     {
-        return NotFound();
-    }
+        var product = GetProducts().FirstOrDefault(p => p.Id == Id);
+        if (product == null)
+        {
+            return NotFound();
+        }
 
-    var basketJson = TempData["Basket"] as string ?? "[]";
-    var basketItems = System.Text.Json.JsonSerializer.Deserialize<List<Product>>(basketJson);
-    if (basketItems != null)
-    {
-        basketItems.Add(product);
-    }
-    TempData["Basket"] = System.Text.Json.JsonSerializer.Serialize(basketItems);
+        var basketJson = TempData["Basket"] as string ?? "[]";
+        var basketItems = System.Text.Json.JsonSerializer.Deserialize<List<Product>>(basketJson);
+        if (basketItems != null)
+        {
+            basketItems.Add(product);
+        }
+        TempData["Basket"] = System.Text.Json.JsonSerializer.Serialize(basketItems);
 
-    return RedirectToPage("/Basket");
-}
+        return RedirectToPage("/Basket");
+    }
 
 
 
