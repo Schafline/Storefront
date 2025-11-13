@@ -1,0 +1,18 @@
+@page
+@model BasketModel
+<h2>Your Shopping Basket</h2>
+
+@if (Model.Items.Any())
+{
+    <ul>
+        @foreach (var item in Model.Items)
+        {
+            <li>@item.Name - @item.Quantity</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Your basket is empty.</p>
+}
+
