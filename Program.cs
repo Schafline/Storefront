@@ -1,5 +1,10 @@
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+    .AddUserSecrets<Program>()  // This line loads user secrets
+    .AddEnvironmentVariables();
 // Add services to the container.
 builder.Services.AddRazorPages();
 

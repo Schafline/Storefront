@@ -6,6 +6,14 @@ using storefront.Models;
 
 public class BasketModel : PageModel
 {
+    private readonly IConfiguration _config;
+
+    public BasketModel(IConfiguration config)
+    {
+        _config = config;
+    }
+
+    public string PayPalClientId { get; private set; }
     public List<Product> BasketItems { get; set; } = new();
     [BindProperty]
     public int Id { get; set; }
@@ -35,6 +43,6 @@ public class BasketModel : PageModel
         TotalPrice = BasketItems.Sum(p => p.Price);
         // Keep basket alive for future requests
         TempData.Keep("Basket");
-
+        PayPalClientId = _config["PayPal:SandboxClientId"];
     }
 }
