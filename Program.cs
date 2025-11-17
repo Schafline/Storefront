@@ -1,7 +1,8 @@
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Configuration
+    .AddUserSecrets<Program>();  // This line loads user secrets
 // Add services to the container.
 builder.Services.AddRazorPages();
 
