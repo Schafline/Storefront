@@ -1,0 +1,88 @@
+
+body {  font-family: 'Segoe UI', sans-serif; 
+        background-color: #f9f6f0; /* light neutral color to complement navbar #e5d4b8 */ 
+        color: #333; 
+     }
+
+.navbar {
+  background-color: #e5d4b8; /* beige navbar background color */
+  border-bottom: 2px solid #c9b79c; /* softer border color to complement navbar #e5d4b8 and body #f9f6f0 */
+}
+
+.site-logo {
+  height: 120px; /* default for desktop */
+}
+
+@media (max-width: 600px) {
+  .site-logo {
+    max-height: 80px;
+  }
+}
+
+
+.btn-primary {
+  background-color: #d2691e; /* terracotta */
+  border-color: #b3540e; /* slightly darker for border */
+}
+
+.btn-primary:hover {
+  background-color: #b3540e;
+  border-color: #8a3e07;
+}
+
+.btn-primary:active,.btn-primary:focus,.btn-primary:focus-visible
+{
+  background-color: #8a3e07 !important; /* darker terracotta */
+  border-color: #6a2e05 !important; /* darker border */
+}
+/*puts a warm amber/orange border around the button when it is focused*/
+.btn-primary:focus,.btn-primary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(240, 156, 96, 0.7)!important; 
+}
+
+.btn-success {
+  background-color: #9caf88; /* soft sage green */
+  border-color: #7a8a6a; /* slightly darker for border */
+}
+
+.btn-success:hover {
+  background-color: #7a8a6a;
+  border-color: #5f6b4f;
+}
+
+.btn-success:active,.btn-success:focus,.btn-success:focus-visible
+{ /* darker sage green for active state */
+  background-color: #6b7a5f!important;
+  border-color: #556644!important;
+}
+/* puts a soft mint green border around the button when it is focused*/
+.btn-success:focus,.btn-success:focus-visible
+{
+  box-shadow: 0 0 0 3px rgba(168, 213, 186, 0.7)!important; 
+}
+
+.btn-danger {
+  background-color: #c94f4f; /* muted brick red */
+  border-color: #9c3f3f; /* slightly darker for border */
+}
+
+.btn-danger:hover {
+  background-color: #9c3f3f;
+  border-color: #7a3232;
+}
+
+.btn-danger:active,.btn-danger:focus,.btn-danger:focus-visible
+{ /*darker muted brick red color for active state */
+  background-color: #7a3232 !important;
+  border-color: #5c2727 !important;
+}
+/* puts a soft rose/coral border around the button when it is focused*/
+.btn-danger:focus,.btn-danger:focus-visible {
+  box-shadow: 0 0 0 3px rgba(224, 122, 122, 0.7)!important;
+}
+
+.badge.bg-primary {
+  background-color: #d2691e!important; /* terracotta to match primary buttons */
+  color: white;
+}
+
