@@ -4,15 +4,54 @@
 <svg
    version="1.1"
    id="svg1"
-   width="408.43359"
-   height="387.14941"
-   viewBox="0 0 408.43359 387.14941"
-   sodipodi:docname="logo2.svg"
+   width="363.08316"
+   height="396.27213"
+   viewBox="0 0 363.08316 396.27212"
+   sodipodi:docname="logo.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <rect
+       x="94.757896"
+       y="424.48978"
+       width="335.4942"
+       height="55.702278"
+       id="rect14" />
+    <rect
+       x="87.71508"
+       y="427.05081"
+       width="352.7811"
+       height="74.909966"
+       id="rect5" />
+    <rect
+       x="95.398155"
+       y="436.0144"
+       width="337.41495"
+       height="72.348938"
+       id="rect4" />
+    <rect
+       x="101.80072"
+       y="425.77029"
+       width="336.77469"
+       height="86.43457"
+       id="rect2" />
+    <rect
+       x="110.12405"
+       y="439.21567"
+       width="306.04242"
+       height="60.824329"
+       id="rect1" />
+    <rect
+       x="62.104839"
+       y="302.20087"
+       width="406.56262"
+       height="131.2525"
+       id="rect7" />
+  </defs>
   <sodipodi:namedview
      id="namedview1"
      pagecolor="#ffffff"
@@ -23,80 +62,29 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.5618751"
-     inkscape:cx="155.26209"
-     inkscape:cy="-157.82312"
+     inkscape:cx="183.43337"
+     inkscape:cy="238.49539"
      inkscape:window-width="1920"
      inkscape:window-height="1051"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="group-R5" />
-  <defs
-     id="defs1">
-    <rect
-       x="62.104839"
-       y="302.20087"
-       width="406.56262"
-       height="131.2525"
-       id="rect15" />
-    <rect
-       x="86.43457"
-       y="318.20728"
-       width="353.42136"
-       height="108.84353"
-       id="rect14" />
-    <rect
-       x="88.355339"
-       y="325.25009"
-       width="354.06161"
-       height="87.71508"
-       id="rect13" />
-    <rect
-       x="87.71508"
-       y="325.89035"
-       width="348.93958"
-       height="88.355339"
-       id="rect12" />
-    <rect
-       x="203.60143"
-       y="158.14325"
-       width="124.84994"
-       height="97.318924"
-       id="rect11" />
-    <rect
-       x="222.16885"
-       y="145.33813"
-       width="88.355339"
-       height="119.72789"
-       id="rect6" />
-    <rect
-       x="222.80911"
-       y="144.69788"
-       width="90.276108"
-       height="124.20968"
-       id="rect5" />
-    <rect
-       x="213.20528"
-       y="170.30812"
-       width="108.84353"
-       height="70.428169"
-       id="rect4" />
-    <rect
-       x="93.477386"
-       y="330.37213"
-       width="345.09802"
-       height="76.830727"
-       id="rect3" />
-    <rect
-       x="96.038414"
-       y="339.33572"
-       width="340.61624"
-       height="64.025604"
-       id="rect1" />
-  </defs>
+     inkscape:current-layer="group-R5">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="363.08316"
+       height="396.27213"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
   <g
      id="g1"
-     transform="translate(-74.75206,-68.588008)">
+     inkscape:groupmode="layer"
+     inkscape:label="1"
+     transform="translate(-83.079232,-68.588005)">
     <g
        id="group-R5">
       <path
@@ -128,46 +116,86 @@
          xml:space="preserve"
          id="text1"
          style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#000000;fill-opacity:0;stroke-width:0" />
-      <text
-         xml:space="preserve"
-         id="text4"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.3333px;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4);display:inline;fill:#0a0a0f;fill-opacity:1;stroke-width:0" />
-      <text
-         xml:space="preserve"
-         id="text5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64px;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect5);display:inline;fill:#0a0a0f;fill-opacity:1;stroke-width:0" />
       <path
-         d="m 243.05988,179.4046 3.75,-5.375 h 3.04166 l 0.25,22.45833 h -2.75 q -2.58333,-10.33333 -7.66666,-15.08333 -5.04166,-4.75 -11.62499,-4.75 -5.5,0 -9,3.29167 -3.5,3.29166 -3.5,8.04166 0,2.95833 1.33333,5.20833 1.33334,2.20833 3.95834,3.625 2.66666,1.375 9.99999,2.95833 10.29166,2.25 14.41666,4.54167 4.16667,2.29166 6.20833,5.79166 2.04167,3.45833 2.04167,8.125 0,8.33333 -5.625,13.83333 -5.58333,5.45833 -14.45833,5.45833 -9.54166,0 -16.58332,-6.16667 l -4.70833,5.75 h -3 v -23.87499 h 3 q 1.74999,9.875 7.83333,15.58333 6.08333,5.70833 13.70832,5.70833 6.16667,0 10.04167,-3.625 3.91666,-3.66667 3.91666,-8.875 0,-2.95833 -1.45833,-5.16666 -1.45833,-2.25 -4.625,-3.75 -3.16667,-1.54167 -12.45833,-3.70833 -10.20833,-2.41667 -13.91666,-5.41667 -5.20833,-4.24999 -5.20833,-12.04166 0,-8.12499 5.16666,-13.29166 5.20834,-5.20833 13.29167,-5.20833 3.87499,0 7.37499,1.375 3.5,1.375 7.25,4.58333 z m 18.70832,-4.66666 h 50.12498 l 0.83334,21.33332 h -2.875 q -1.91667,-10.99999 -5.375,-14.33333 -3.95833,-3.87499 -11.29166,-3.87499 h -9.875 q -1.45833,0 -2.125,0.70833 -0.66666,0.66666 -0.66666,2.04166 v 22.29166 h 5.29166 q 4.41667,0 7.04166,-2.91666 2.625,-2.91667 2.83334,-9 h 3 v 27.79166 h -3 q -0.29167,-6.91667 -2.83334,-9.875 -2.54166,-2.95833 -7.04166,-2.95833 h -5.29166 v 23.49999 q 0,2.08333 1,2.95833 1,0.83333 3.45833,0.83333 h 6.41666 v 3.125 H 261.7682 v -3.125 h 6.33334 q 1.91666,0 2.70833,-0.75 0.83333,-0.79166 0.83333,-2.54166 v -48.99998 q 0,-1.66667 -0.875,-2.375 -0.83333,-0.70833 -2.95833,-0.70833 h -6.04167 z"
+         d="m 248.39204,179.15961 3.75,-5.375 h 3.04165 l 0.25,22.45833 h -2.75 q -2.58333,-10.33333 -7.66665,-15.08333 -5.04167,-4.75 -11.625,-4.75 -5.5,0 -9,3.29167 -3.5,3.29166 -3.5,8.04166 0,2.95833 1.33333,5.20833 1.33334,2.20833 3.95834,3.625 2.66666,1.375 9.99999,2.95833 10.29166,2.25 14.41666,4.54167 4.16668,2.29166 6.20833,5.79166 2.04167,3.45833 2.04167,8.125 0,8.33333 -5.625,13.83333 -5.58332,5.45833 -14.45833,5.45833 -9.54166,0 -16.58332,-6.16667 l -4.70832,5.75 h -3 v -23.87499 h 3 q 1.74998,9.875 7.83332,15.58333 6.08333,5.70833 13.70833,5.70833 6.16667,0 10.04167,-3.625 3.91666,-3.66667 3.91666,-8.875 0,-2.95833 -1.45833,-5.16666 -1.45833,-2.25 -4.625,-3.75 -3.16667,-1.54167 -12.45833,-3.70833 -10.20833,-2.41667 -13.91666,-5.41667 -5.20833,-4.24999 -5.20833,-12.04166 0,-8.12499 5.16666,-13.29166 5.20834,-5.20833 13.29167,-5.20833 3.87499,0 7.37499,1.375 3.5,1.375 7.25,4.58333 z m 18.70831,-4.66666 h 50.12498 l 0.83334,21.33332 h -2.875 q -1.91667,-10.99999 -5.375,-14.33333 -3.95833,-3.87499 -11.29166,-3.87499 h -9.875 q -1.45832,0 -2.125,0.70833 -0.66665,0.66666 -0.66665,2.04166 v 22.29166 h 5.29165 q 4.41668,0 7.04166,-2.91666 2.625,-2.91667 2.83334,-9 h 3 v 27.79166 h -3 q -0.29167,-6.91667 -2.83334,-9.875 -2.54166,-2.95833 -7.04166,-2.95833 h -5.29165 v 23.49999 q 0,2.08333 1,2.95833 1,0.83333 3.45833,0.83333 h 6.41665 v 3.125 h -29.62499 v -3.125 h 6.33334 q 1.91666,0 2.70833,-0.75 0.83333,-0.79166 0.83333,-2.54166 v -48.99998 q 0,-1.66667 -0.875,-2.375 -0.83333,-0.70833 -2.95833,-0.70833 h -6.04167 z"
          id="text11"
          style="font-size:85.3333px;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook, Normal';white-space:pre;fill:#0a0a0f;stroke-width:0"
-         transform="translate(8.9635851,0.64025608)"
          aria-label="SF" />
-      <text
-         xml:space="preserve"
-         id="text12"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect12);display:inline;fill:#0a0a0f;fill-opacity:1;stroke-width:0" />
-      <text
-         xml:space="preserve"
-         id="text13"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect13);display:inline;fill:#0a0a0f;fill-opacity:1;stroke-width:0" />
-      <text
-         xml:space="preserve"
-         id="text14"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:Harrington;-inkscape-font-specification:'Harrington, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect15);display:inline;fill:#0a0a0f;fill-opacity:1;stroke-width:0"
-         transform="translate(19.366146,8.9635851)"><tspan
-           x="62.105469"
-           y="381.47467"
-           id="tspan1">storefront</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#0a0a0f;fill-opacity:1;stroke-width:0"
-         x="74.447372"
-         y="455.37415"
-         id="text2"><tspan
-           sodipodi:role="line"
-           id="tspan2"
-           x="74.447372"
-           y="455.37415">VINTAGE FASHION ACCESSORIES</tspan></text>
     </g>
+    <text
+       xml:space="preserve"
+       id="text3"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:Harrington;-inkscape-font-specification:'Harrington, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect7);display:inline;fill:#0a0a0f;fill-opacity:1;stroke-width:0"
+       transform="translate(17.557098,6.6288398)"><tspan
+         x="62.105469"
+         y="381.47467"
+         id="tspan2">storefront</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect2);display:inline;fill:#000000;fill-opacity:0;stroke-width:0" />
+    <text
+       xml:space="preserve"
+       id="text4"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4);display:inline;fill:#000000;fill-opacity:0;stroke-width:0" />
+    <text
+       xml:space="preserve"
+       id="text5"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect5);display:inline;fill:#000000;fill-opacity:0;stroke-width:0" />
+    <text
+       xml:space="preserve"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:0;stroke-width:0"
+       x="141.4966"
+       y="448.17926"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         x="141.4966"
+         y="448.17926">ss</tspan></text>
+    <text
+       xml:space="preserve"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#0d0a06;fill-opacity:1;stroke-width:0"
+       x="128.05121"
+       y="459.06363"
+       id="text7"><tspan
+         id="tspan7"
+         x="128.05121"
+         y="459.06363"
+         sodipodi:role="line" /></text>
+    <text
+       xml:space="preserve"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#130e06;fill-opacity:1;stroke-width:0"
+       x="133.81352"
+       y="450.10004"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         x="133.81352"
+         y="450.10004" /></text>
+    <text
+       xml:space="preserve"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#130e06;fill-opacity:1;stroke-width:0"
+       x="105.002"
+       y="441.7767"
+       id="text13"><tspan
+         sodipodi:role="line"
+         id="tspan13"
+         x="105.002"
+         y="441.7767" /></text>
+    <text
+       xml:space="preserve"
+       id="text14"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect14);display:inline;fill:#130e06;fill-opacity:1;stroke-width:0" />
+    <text
+       xml:space="preserve"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#130e06;fill-opacity:1;stroke-width:0"
+       x="121.64867"
+       y="464.18567"
+       id="text15"><tspan
+         sodipodi:role="line"
+         id="tspan15"
+         x="121.64867"
+         y="464.18567"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:'Lucida Sans';-inkscape-font-specification:'Lucida Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">CASUAL STYLES</tspan></text>
   </g>
 </svg>
