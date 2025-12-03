@@ -1,5 +1,6 @@
 using System.Globalization;
-
+using Storefront.Data;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
     .AddUserSecrets<Program>();  // This line loads user secrets
@@ -10,6 +11,10 @@ var culture = new CultureInfo("en-US");
 CultureInfo.DefaultThreadCurrentCulture = culture;
 CultureInfo.DefaultThreadCurrentUICulture = culture;
 
+builder.Services.AddDbContext<ShopContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("ShopDbConnection"));
+});
 
 var app = builder.Build();
 
