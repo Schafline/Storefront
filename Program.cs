@@ -1,3 +1,6 @@
+
+using Storefront.Data;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
     .SetBasePath(Directory.GetCurrentDirectory())
@@ -7,6 +10,10 @@ builder.Configuration
     .AddEnvironmentVariables();
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<ShopContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("ShopDbConnection"));
+});
 
 var app = builder.Build();
 
