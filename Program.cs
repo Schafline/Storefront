@@ -1,6 +1,6 @@
-
-using Storefront.Data;
 using Microsoft.EntityFrameworkCore;
+using Storefront.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
     .SetBasePath(Directory.GetCurrentDirectory())
@@ -14,7 +14,6 @@ builder.Services.AddDbContext<ShopContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("ShopDbConnection"));
 });
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
