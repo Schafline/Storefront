@@ -1,52 +1,66 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Storefront.Models;
+using Microsoft.EntityFrameworkCore;
+using Storefront.Data;
 
 public class ProductDetailModel : PageModel
 {
+    private readonly ShopContext _context;
+
+    public ProductDetailModel(ShopContext context)
+    {
+        _context = context;
+    }
+
     [BindProperty(SupportsGet = true)]
     public int Id { get; set; }
 
     public Product? Product { get; set; }
 
-    private List<Product> GetProducts()
-    {
-        return new List<Product>
-        {
-            new Product {   Id = 1, Name = "T-shirt", Description = "Soft cotton T-shirt",
-                            Price = 19.99m, ImageUrl = "/images/tshirt.jpg" },
-            new Product {   Id = 2, Name = "Sneakers", Description = "Comfortable running shoes",
-                            Price = 49.99m, ImageUrl = "/images/sneakers.jpg" }
-        };
-    }
 
-    public void OnGet()
+    public async Task<IActionResult> OnGetAsync()
     {
-        var product = GetProducts().FirstOrDefault(p => p.Id == Id);
-        if (product != null)
+        if (Id == 0)
         {
-            Product = product;
+            return NotFound();
         }
 
+        Product = await _context.Products
+            .FirstOrDefaultAsync(p => p.Id == Id);
+
+        if (Product == null)
+        {
+            return NotFound();
+        }
+
+        return Page();
     }
-    public IActionResult OnPost()
+
+
+    public async Task<IActionResult> OnPostAsync()
     {
-        var product = GetProducts().FirstOrDefault(p => p.Id == Id);
+        var product = await _context.Products
+            .FirstOrDefaultAsync(p => p.Id == Id);
+
         if (product == null)
         {
             return NotFound();
         }
 
         var basketJson = TempData["Basket"] as string ?? "[]";
-        var basketItems = System.Text.Json.JsonSerializer.Deserialize<List<Product>>(basketJson);
+        var basketItems = System.Text.Json.JsonSerializer.Deserialize<List<Product>>(basketJson) ?? new List<Product>();
+
         if (basketItems != null)
         {
             basketItems.Add(product);
         }
+
         TempData["Basket"] = System.Text.Json.JsonSerializer.Serialize(basketItems);
 
         return RedirectToPage("/Basket");
     }
+
 
 
 
