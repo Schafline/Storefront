@@ -486,3 +486,7 @@ $RECYCLE.BIN/
 # Ignore SQLite temporary files
 *.db-shm
 *.db-wal
+
+appsettings.Development.json
+appsettings.Production.json
+
