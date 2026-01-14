@@ -1,0 +1,19 @@
+@page
+@using Storefront.Pages_Admin
+@model LoginModel
+
+<h2>Admin Login</h2>
+
+<form method="post">
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="Password" />
+    </div>
+
+    <button type="submit">Log In</button>
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <p style="color:red">@Model.ErrorMessage</p>
+    }
+</form>
