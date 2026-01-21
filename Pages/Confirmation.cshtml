@@ -8,3 +8,35 @@
     <h2>Thank you for your purchase!</h2>
     <p>Your transaction has been completed successfully.</p>
 </div>
+
+@if (Model.Order != null)
+{
+    <div class="mt-4">
+        <h4>Order #@Model.Order.Id</h4>
+        <p>Placed on @Model.Order.OrderDate.ToString("dd MMM yyyy")</p>
+
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Order.Items)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.Price.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h5 class="mt-3">
+            Total: @Model.Order.Items.Sum(i => i.Price).ToString("C")
+            &nbsp;&middot;&nbsp;
+            Status: @Model.Order.OrderStatus
+        </h5>
+    </div>
+}
