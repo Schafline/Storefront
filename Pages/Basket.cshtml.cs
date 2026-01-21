@@ -1,16 +1,24 @@
-
 using Microsoft.AspNetCore.Mvc;
-
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Storefront.Data;
 using Storefront.Models;
+using Storefront.Services;
 
+// This handler is called by JavaScript after PayPal approves the payment.
+// Because it's not submitted from an HTML form, it doesn't include an antiforgery token.
+// We disable antiforgery here so the JSON request isn't rejected by the framework.
+[IgnoreAntiforgeryToken]
 public class BasketModel : PageModel
 {
     private readonly IConfiguration _config;
+    private readonly BasketService _basketService;
+    private readonly ShopContext _context;
 
-    public BasketModel(IConfiguration config)
+    public BasketModel(IConfiguration config, BasketService basketService, ShopContext context)
     {
         _config = config;
+        _basketService = basketService;
+        _context = context;
     }
 
     public string PayPalClientId { get; private set; }
@@ -22,14 +30,13 @@ public class BasketModel : PageModel
 
     public IActionResult OnPostRemove()
     {
-        var basketJson = TempData["Basket"] as string ?? "[]";
-        var basketItems = System.Text.Json.JsonSerializer.Deserialize<List<Product>>(basketJson) ?? new List<Product>();
+        var basket = _basketService.GetBasket();
+        var itemToRemove = basket.FirstOrDefault(p => p.Id == Id);
 
-        var itemToRemove = basketItems.FirstOrDefault(p => p.Id == Id);
         if (itemToRemove != null)
         {
-            basketItems.Remove(itemToRemove);
-            TempData["Basket"] = System.Text.Json.JsonSerializer.Serialize(basketItems);
+            basket.Remove(itemToRemove);
+            _basketService.SaveBasket(basket);
         }
 
         return RedirectToPage();
@@ -38,11 +45,46 @@ public class BasketModel : PageModel
 
     public void OnGet()
     {
-        var basketJson = TempData["Basket"] as string ?? "[]";
-        BasketItems = System.Text.Json.JsonSerializer.Deserialize<List<Product>>(basketJson)?? new List<Product>();
+        BasketItems = _basketService.GetBasket();
         TotalPrice = BasketItems.Sum(p => p.Price);
-        // Keep basket alive for future requests
-        TempData.Keep("Basket");
         PayPalClientId = _config["PayPal:SandboxClientId"];
+    }
+    
+    public async Task<IActionResult> OnPostCompleteOrderAsync([FromBody] PayPalOrderInfo info)
+    {
+        // Load the basket from session
+        var cart = _basketService.GetBasket();
+
+        var order = new Order
+        {
+            OrderDate = DateTime.UtcNow
+        };
+
+        foreach (var product in cart)
+        {
+            order.Items.Add(new OrderItem
+            {
+                ProductId = product.Id,
+                Quantity = 1,
+                ProductName = product.Name,
+                Price = product.Price
+            });
+        }
+
+        order.Total = order.Items.Sum(i => i.Price);
+        order.OrderStatus = "Paid";
+        _context.Orders.Add(order);
+        await _context.SaveChangesAsync();
+
+        // Clear basket
+        _basketService.Clear();
+
+        return new JsonResult(new { orderId = order.Id });
+    }
+
+    public class PayPalOrderInfo
+    {
+        public string OrderId { get; set; }
+        public string PayerId { get; set; }
     }
 }

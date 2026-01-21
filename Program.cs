@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Storefront.Data;
+using Storefront.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
@@ -27,6 +28,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Admin/Login";
     });
 
+builder.Services.AddScoped<BasketService>();
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -45,6 +52,8 @@ app.UseRouting();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapStaticAssets();
 
