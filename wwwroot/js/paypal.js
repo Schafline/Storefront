@@ -1,5 +1,5 @@
 paypal.Buttons({
-    createOrder: function(data, actions) {
+    createOrder: function (data, actions) {
         const totalElement = document.getElementById('basket-total');
         const total = totalElement ? totalElement.dataset.total : "0.00";
 
@@ -12,9 +12,20 @@ paypal.Buttons({
         });
 
     },
-    onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
-            window.location.href = '/Confirmation';
+    onApprove: function (data, actions) {
+        return actions.order.capture().then(function (details) {
+            return fetch('/Basket?handler=CompleteOrder', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    orderId: data.orderID,
+                    payerId: data.payerID
+                })
+            })
+                .then(response => response.json())
+                .then(result => {
+                    window.location = `/Confirmation?id=${result.orderId}`;
+                });
         });
     }
 }).render('#paypal-button-container');
