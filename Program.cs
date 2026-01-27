@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Storefront.Data;
 using Storefront.Services;
+using Storefront.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
@@ -33,6 +34,13 @@ builder.Services.AddScoped<BasketService>();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddSession();
+
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("Email")
+);
+
+builder.Services.AddScoped<EmailService>();
+
 
 var app = builder.Build();
 
