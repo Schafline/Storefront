@@ -13,11 +13,13 @@ public class BasketModel : PageModel
     private readonly IConfiguration _config;
     private readonly BasketService _basketService;
     private readonly ShopContext _context;
+    private readonly EmailService _emailService;
 
-    public BasketModel(IConfiguration config, BasketService basketService, ShopContext context)
+    public BasketModel(IConfiguration config, BasketService basketService, EmailService emailService, ShopContext context)
     {
         _config = config;
         _basketService = basketService;
+        _emailService = emailService;
         _context = context;
     }
 
@@ -73,8 +75,14 @@ public class BasketModel : PageModel
 
         order.Total = order.Items.Sum(i => i.Price);
         order.OrderStatus = OrderStatusConstants.Paid;
+        order.VerificationCode = Random.Shared.Next(100000, 999999).ToString();
         _context.Orders.Add(order);
         await _context.SaveChangesAsync();
+
+        await _emailService.SendEmailAsync(
+            "Order Confirmation",
+            $"Thank you for your order! Your verification code is: {order.VerificationCode}"
+        );
 
         // Clear basket
         _basketService.Clear();
