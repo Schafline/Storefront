@@ -8,8 +8,10 @@ namespace Storefront.Models
 
         public decimal Total { get; set; }
 
-        public string OrderStatus { get;set; }
+        public string OrderStatus { get; set; }
 
         public List<OrderItem> Items { get; set; } = new();
+
+        public string? VerificationCode { get; set; }
     }
 }
