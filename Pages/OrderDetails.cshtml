@@ -1,0 +1,53 @@
+﻿@page
+@model OrderDetailsModel
+
+<h2>Your Order</h2>
+
+@if (Model.Order == null)
+{
+    <p>We couldn't load your order.</p>
+    return;
+}
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h4 class="card-title">Order Summary</h4>
+
+        <dl class="row">
+            <dt class="col-sm-3">Order Number</dt>
+            <dd class="col-sm-9">@Model.Order.Id</dd>
+
+            <dt class="col-sm-3">Order Date</dt>
+            <dd class="col-sm-9">@Model.Order.OrderDate.ToString("dd MMM yyyy")</dd>
+
+            <dt class="col-sm-3">Verification Code</dt>
+            <dd class="col-sm-9">@Model.Order.VerificationCode</dd>
+
+            <dt class="col-sm-3">Status</dt>
+            <dd class="col-sm-9">@Model.Order.OrderStatus</dd>
+
+        </dl>
+    </div>
+</div>
+
+<h4>Items</h4>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th class="text-end">Quantity</th>
+            <th class="text-end">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Order.Items)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td class="text-end">@item.Quantity</td>
+                <td class="text-end">@item.Price.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
