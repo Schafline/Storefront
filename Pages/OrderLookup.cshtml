@@ -1,0 +1,26 @@
+﻿@page
+@model OrderLookupModel
+
+<h2>Find Your Order</h2>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        @Model.ErrorMessage
+    </div>
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="VerificationCode">Verification Code</label>
+        <input type="text" id="VerificationCode" name="VerificationCode" class="form-control"
+            asp-for="VerificationCode" />
+        <span asp-validation-for="VerificationCode" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">View Order</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
