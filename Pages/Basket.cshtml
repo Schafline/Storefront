@@ -32,9 +32,18 @@ else
         <strong>Total:</strong> $@Model.TotalPrice
     </div>
     <span id="basket-total" data-total="@Model.TotalPrice" hidden></span>
-    <div id="paypal-button-container" class="mt-3 text-end"></div>
-    <script src="https://www.paypal.com/sdk/js?client-id=@Model.PayPalClientId"></script>
-    <script src="~/js/paypal.js"></script>
-
-
+    @if (Model.HasShippingInfo)
+    {
+        <div id="paypal-button-container" class="mt-3 text-end"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=@Model.PayPalClientId"></script>
+        <script src="~/js/paypal.js"></script>
+    }
+    else
+    {
+        <form method="get" asp-page="/ShippingDetails">
+            <button type="submit" class="btn btn-primary">
+                Proceed to Checkout
+            </button>
+        </form>
+    }
 }

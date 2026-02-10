@@ -14,7 +14,7 @@ namespace Storefront.Services
             _settings = settings.Value;
         }
 
-        public async Task SendEmailAsync(string subject, string body)
+        public async Task SendEmailAsync(string toEmail, string subject, string body)
         {
             using var client = new SmtpClient(_settings.Host, _settings.Port)
             {
@@ -30,7 +30,7 @@ namespace Storefront.Services
                 IsBodyHtml = false
             };
 
-            message.To.Add(_settings.To);
+            message.To.Add(toEmail);
 
             await client.SendMailAsync(message);
         }

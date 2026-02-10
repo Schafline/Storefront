@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using Storefront.Constants;
 using Storefront.Data;
 using Storefront.Models;
 using Storefront.Services;
@@ -27,8 +29,8 @@ public class BasketModel : PageModel
     public List<Product> BasketItems { get; set; } = new();
     [BindProperty]
     public int Id { get; set; }
-
     public decimal TotalPrice { get; set; }
+    public bool HasShippingInfo { get; private set; }
 
     public IActionResult OnPostRemove()
     {
@@ -47,6 +49,7 @@ public class BasketModel : PageModel
 
     public void OnGet()
     {
+        HasShippingInfo = HttpContext.Session.GetInt32(SessionKeys.ShippingInfoIdKey) != null;
         BasketItems = _basketService.GetBasket();
         TotalPrice = BasketItems.Sum(p => p.Price);
         PayPalClientId = _config["PayPal:SandboxClientId"];
@@ -56,10 +59,13 @@ public class BasketModel : PageModel
     {
         // Load the basket from session
         var cart = _basketService.GetBasket();
+        var shippingInfoId = HttpContext.Session.GetInt32(SessionKeys.ShippingInfoIdKey);
+
 
         var order = new Order
         {
-            OrderDate = DateTime.UtcNow
+            OrderDate = DateTime.UtcNow,
+            ShippingInfoId = shippingInfoId
         };
 
         foreach (var product in cart)
@@ -79,7 +85,10 @@ public class BasketModel : PageModel
         _context.Orders.Add(order);
         await _context.SaveChangesAsync();
 
+        var shippingInfo = await _context.ShippingInfos.FirstOrDefaultAsync(s => s.Id == shippingInfoId);
+
         await _emailService.SendEmailAsync(
+            shippingInfo.Email,
             "Order Confirmation",
             $"Thank you for your order! Your verification code is: {order.VerificationCode}"
         );
