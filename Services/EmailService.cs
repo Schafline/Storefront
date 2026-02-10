@@ -19,12 +19,12 @@ namespace Storefront.Services
             _http = httpFactory.CreateClient();
         }
 
-        public async Task SendEmailAsync(string subject, string body)
+        public async Task SendEmailAsync(string toEmail, string subject, string body)
         {
             var payload = new
             {
                 sender = new { name = _settings.FromName, email = _settings.From },
-                to = new[] { new { email = _settings.To } },
+                to = new[] { new { email = toEmail } },
                 subject = subject,
                 htmlContent = body
             };

@@ -51,3 +51,15 @@
         }
     </tbody>
 </table>
+<h4 class="mt-4">Shipping Information</h4>
+
+<p><strong>Name:</strong> @Model.Order.ShippingInfo.FullName</p>
+<p><strong>Address:</strong> @Model.Order.ShippingInfo.AddressLine1</p>
+
+@if (!string.IsNullOrWhiteSpace(Model.Order.ShippingInfo.AddressLine2))
+{
+    <p>@Model.Order.ShippingInfo.AddressLine2</p>
+}
+
+<p>@Model.Order.ShippingInfo.City</p>
+<p>@Model.Order.ShippingInfo.Postcode</p>

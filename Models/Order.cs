@@ -13,5 +13,9 @@ namespace Storefront.Models
         public List<OrderItem> Items { get; set; } = new();
 
         public string? VerificationCode { get; set; }
+
+        public int? ShippingInfoId { get; set; }
+
+        public ShippingInfo ShippingInfo { get; set; }
     }
 }
