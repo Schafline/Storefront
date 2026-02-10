@@ -26,6 +26,7 @@ public class OrderDetailsModel : PageModel
 
         Order = _context.Orders
             .Include(o => o.Items)
+            .Include(o => o.ShippingInfo)
             .FirstOrDefault(o => o.VerificationCode == normalisedCode);
 
         if (Order == null)

@@ -1,3 +1,4 @@
+using Storefront.Constants;
 using Storefront.Models;
 using System.Text.Json;
 namespace Storefront.Services
@@ -5,7 +6,6 @@ namespace Storefront.Services
     public class BasketService
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private const string BasketKey = "Basket";
 
         public BasketService(IHttpContextAccessor httpContextAccessor)
         {
@@ -15,7 +15,7 @@ namespace Storefront.Services
         public List<Product> GetBasket()
         {
             var session = _httpContextAccessor.HttpContext.Session;
-            var json = session.GetString(BasketKey);
+            var json = session.GetString(SessionKeys.BasketKey);
 
             if (string.IsNullOrEmpty(json))
                 return new List<Product>();
@@ -35,13 +35,14 @@ namespace Storefront.Services
         {
             var session = _httpContextAccessor.HttpContext.Session;
             var json = JsonSerializer.Serialize(basket);
-            session.SetString(BasketKey, json);
+            session.SetString(SessionKeys.BasketKey, json);
         }
 
         public void Clear()
         {
             var session = _httpContextAccessor.HttpContext.Session;
-            session.Remove(BasketKey);
+            session.Remove(SessionKeys.BasketKey);
+            session.Remove(SessionKeys.ShippingInfoIdKey);
         }
     }
 }
