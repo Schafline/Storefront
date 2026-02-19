@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Storefront.Data;
@@ -16,6 +17,26 @@ namespace Storefront.Pages.Admin
 
         public List<Order> Orders { get; set; } = new();
         public string? Query { get; set; }
+
+        public async Task<IActionResult> OnPostAsync(int orderId)
+        {
+            var order = await _context.Orders.FindAsync(orderId);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            // Extract the posted status value
+            var newStatus = Request.Form["Orders[0].OrderStatus"];
+
+            // Update the order
+            order.OrderStatus = newStatus;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage();
+        }
 
         public async Task OnGetAsync(string? q)
         {
