@@ -9,13 +9,37 @@ public class ShopContextFactory
   public ShopContext
   CreateDbContext(string[] args)
   {
+    var config = new ConfigurationBuilder()
+      .AddJsonFile("appsettings.json")
+      .AddJsonFile("appsettings.Development.json",
+       optional: true)
+      .AddEnvironmentVariables()
+      .Build();
+
+    var env =
+      Environment.GetEnvironmentVariable(
+      "ASPNETCORE_ENVIRONMENT");
+
     var optionsBuilder =
-    new DbContextOptionsBuilder
-    <ShopContext>();
+      new DbContextOptionsBuilder<ShopContext>();
 
-    optionsBuilder.UseSqlite
-    ("Data Source=shop.db");
+    if (env == "Production")
+    {
+      var connectionString =
+        Environment.GetEnvironmentVariable(
+        "DATABASE_URL");
 
+      optionsBuilder.UseNpgsql(connectionString);
+    }
+    else
+    {
+      // Use SQLite in development
+      var sqlite =
+        config.GetConnectionString(
+       "ShopDbConnection");
+
+      optionsBuilder.UseSqlite(sqlite);
+    }
     return new ShopContext
     (optionsBuilder.Options);
   }

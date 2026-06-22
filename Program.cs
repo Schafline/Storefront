@@ -26,14 +26,42 @@ var culture = new CultureInfo("en-US");
 CultureInfo.DefaultThreadCurrentCulture = culture;
 CultureInfo.DefaultThreadCurrentUICulture = culture;
 
-builder.Services.AddDbContext<ShopContext>(
-  options =>
-  {
-    options.UseSqlite(
-      builder.Configuration
-        .GetConnectionString(
-          "ShopDbConnection"));
-  });
+var environment = builder.Environment;
+if (environment.IsDevelopment())
+{
+  builder.Services.AddDbContext<ShopContext>(
+    options =>
+    {
+      options.UseSqlite(
+        builder.Configuration
+          .GetConnectionString(
+            "ShopDbConnection"));
+    });
+}
+else
+{
+  var rawUrl =
+    Environment.GetEnvironmentVariable(
+      "DATABASE_URL");
+  var uri = new Uri(rawUrl);
+  var userInfo = uri.UserInfo.Split(':');
+  var connectionString =
+    $@"Host={uri.Host};Port={uri.Port};
+    Username={userInfo[0]};Password={userInfo[1]};
+    Database={uri.AbsolutePath.TrimStart('/')};
+    SSL Mode=Require;
+    Trust Server Certificate=true";
+
+  builder.Services.AddDbContext<ShopContext>(
+    options =>
+      options.UseNpgsql(
+        connectionString,
+        npgsqlOptions =>
+        {
+          npgsqlOptions
+            .EnableRetryOnFailure();
+        }));
+}
 
 builder.Services
   .AddAuthentication(
