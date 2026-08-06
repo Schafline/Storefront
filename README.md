@@ -5,7 +5,7 @@
 > 📖 **Official Companion Code Repository**  
 > This open-source repository contains the complete working source code and chapter-by-chapter snapshots for the 300-page eBook: **Building your first Shopping Basket: A friendly guide to C# and Razor Pages**.  
 >  
-> 👉 **[Get the Full eBook on Gumroad](https://gumroad.com/l/your-link)** — *Includes end-to-end architecture breakdowns, code walkthroughs, and deployment guides.*
+> 👉 **[Get the Building Your First Shopping Basket eBook on Gumroad](https://craigster062.gumroad.com/l/build-ecommerce-with-dotnet)** — *Includes the full eBook, with all explanations, diagrams, and step‑by‑step guidance that accompany the source code in this repository.*
 
 ---
 
