@@ -63,7 +63,7 @@ public class OrdersModel : PageModel
     }
 
     Orders = await orders
-      .OrderByDescending(o => o.OrderDate)
+      .OrderByDescending(o => o.CreatedAt)
       .ToListAsync();
   }
 }

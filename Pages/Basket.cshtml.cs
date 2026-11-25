@@ -86,7 +86,6 @@ public class BasketModel : PageModel
 
     var order = new Order
     {
-      OrderDate = DateTime.UtcNow,
       ShippingInfoId = shippingInfoId
     };
 
