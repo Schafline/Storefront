@@ -52,7 +52,7 @@
               @order.OrderStatus
             </span>
             —
-            @order.OrderDate.ToString("dd MMM yyyy")
+            @order.CreatedAt.ToString("dd MMM yyyy")
           </span>
 
         </summary>
@@ -89,7 +89,7 @@
           </div>
           <div>
             <strong>Date:</strong>
-            @order.OrderDate.ToString("dd MMM yyyy")
+            @order.CreatedAt.ToString("dd MMM yyyy")
           </div>
           <div class="form-group
                       d-flex
